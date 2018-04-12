@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>bind1</title>
+		<meta name="author" content="alb" />
+		<!-- Date: 2018-04-12 -->
+	</head>
+	<body>
+		<script>
+		alert("tet");
+
+		//if(x==null)
+	//{
+		//document.getElementById("error_div").innerHTML="please type a number";
+	//}
+	//else{
+function printtext1() {
+	document.getElementById("error_div").innerHTML="";
+	var x = document.getElementById("num1").value;
+	if(x!=0){
+	waitasyc();
+			
+//alert(x);
+x=x*1000;
+
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve('Process finished');
+    }, x);
+  });
+}
+else
+{
+	document.getElementById("error_div").innerHTML="please enter a number in the field";
+}
+}
+
+async function waitasyc() {
+	var x = document.getElementById("num1").value;		
+//alert(x);
+  
+  //alert(document.getElementById("p1"));
+  document.getElementById("p1").innerHTML="please wait "+x+" seconds";
+  var result = await printtext1();
+  
+  document.getElementById("p1").innerHTML=result;
+  // expected output: "resolved"
+}
+  
+//}
+</script>
+<input type="number" id="num1" value="0"/>
+<button onclick="printtext1()">run</button>
+<div id="target_div"><div id="p1">.</div></div>
+		<div id="error_div"></div>
+	</body>
+</html>
+
